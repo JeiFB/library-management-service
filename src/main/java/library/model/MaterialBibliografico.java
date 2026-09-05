@@ -8,6 +8,7 @@ public abstract class MaterialBibliografico {
 
     private static int totalCreados = 0;
 
+    protected  MaterialBibliografico(){}
     protected MaterialBibliografico(
             String codigo,
             String titulo
@@ -15,7 +16,7 @@ public abstract class MaterialBibliografico {
         this(codigo, titulo, 0);
     }
 
-    public MaterialBibliografico(
+    protected MaterialBibliografico(
             String codigo,
             String titulo,
             int anioPublicacion
@@ -36,6 +37,18 @@ public abstract class MaterialBibliografico {
 
     public int getAnioPublicacion() {
         return anioPublicacion;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setAnioPublicacion(int anioPublicacion) {
+        this.anioPublicacion = anioPublicacion;
     }
 
     public static int getTotalCreados() {
