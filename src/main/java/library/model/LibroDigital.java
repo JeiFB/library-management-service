@@ -1,26 +1,38 @@
-package main.java.library.model;
+package library.model;
 
-import main.java.library.capacity.Descargar;
+import library.capacity.Descargable;
 
-public class LibroDigital extends MaterialBibliografico implements Descargar {
+public class LibroDigital extends MaterialBibliografico implements Descargable {
 
-    public LibroDigital(){}
+    private String autor;
+    private double tamanoArchivoMB;
 
-    public LibroDigital(String codigo, String titulo) {
-        super(codigo, titulo);
-    }
-
-    public LibroDigital(String codigo, String titulo, int anioPublicacion){
+    public LibroDigital(String codigo, String titulo, int anioPublicacion, String autor, double tamanoArchivoMB) {
         super(codigo, titulo, anioPublicacion);
+        this.autor = autor;
+        this.tamanoArchivoMB = tamanoArchivoMB;
     }
 
-    @Override
-    public String mostrarInformacion() {
-        return "";
+    public String getAutor() {
+        return autor;
+    }
+
+    public double getTamanoArchivoMB() {
+        return tamanoArchivoMB;
     }
 
     @Override
     public boolean descargar() {
-        return false;
+        return true;
+    }
+
+    @Override
+    public String mostrarInformacion() {
+        return "Tipo: Libro digital\n" +
+                "Código: " + getCodigo() + "\n" +
+                "Título: " + getTitulo() + "\n" +
+                "Año: " + getAnioPublicacion() + "\n" +
+                "Autor: " + autor + "\n" +
+                "Tamaño del archivo: " + tamanoArchivoMB + " MB";
     }
 }

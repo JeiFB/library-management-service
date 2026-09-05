@@ -1,4 +1,4 @@
-package main.java.library.model;
+package library.model;
 
 public abstract class MaterialBibliografico {
 
@@ -8,23 +8,15 @@ public abstract class MaterialBibliografico {
 
     private static int totalCreados = 0;
 
-    protected  MaterialBibliografico(){}
-    protected MaterialBibliografico(
-            String codigo,
-            String titulo
-    ) {
-        this(codigo, titulo, 0);
-    }
-
-    protected MaterialBibliografico(
-            String codigo,
-            String titulo,
-            int anioPublicacion
-    ) {
+    protected MaterialBibliografico(String codigo, String titulo, int anioPublicacion) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.anioPublicacion = anioPublicacion;
         totalCreados++;
+    }
+
+    protected MaterialBibliografico(String codigo, String titulo) {
+        this(codigo, titulo, 0);
     }
 
     public String getCodigo() {
@@ -37,10 +29,6 @@ public abstract class MaterialBibliografico {
 
     public int getAnioPublicacion() {
         return anioPublicacion;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
     }
 
     public void setTitulo(String titulo) {

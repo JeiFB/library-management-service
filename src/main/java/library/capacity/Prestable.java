@@ -1,4 +1,4 @@
-package main.java.library.capacity;
+package library.capacity;
 
 public interface Prestable {
     boolean prestar();
